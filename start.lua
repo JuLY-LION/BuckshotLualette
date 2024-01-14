@@ -1,10 +1,12 @@
+insert = table.insert
+ran = math.random
+
 function userinput(text)
 	print(text)
 	local rtn = io.read()
 	return rtn
 end
 
-userinput("Buckshot Lualette (Alpha)")
 function loadshotgun(l, d)
 	shotgun = {}
 	shells = {}
@@ -29,6 +31,18 @@ function loadshotgun(l, d)
 	printlist(shotgun)
 end
 
+function printlist(listname)
+	for i = 1, #listname do
+		print(i..". "..listname[i])
+	end
+end
+
+local seed = userinput("Buckshot Lualette (Alpha)")
+if (seed == "") then
+	seed = 65536
+end
+math.randomseed(seed)
+
 username = userinput("> Got a name?")
 username = username == "" and "Username"
 userinput("Welcome aboard, "..username..".")
@@ -41,3 +55,6 @@ print("---------\nROUND 1/4\n---------")
 userinput("2 lives, no items.")
 
 
+--player's turn
+loadshotgun(1,2)
+userinput("> Your move.")
