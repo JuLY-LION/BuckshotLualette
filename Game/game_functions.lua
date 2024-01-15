@@ -38,3 +38,45 @@ function loadshotgun(l, d)
 	--print(ran())
 end
 
+--[[
+# roundSetup
+(Round setup)
+hp: Health points
+ic: Item count
+
+Setup round variables.
+]]--
+function toundSetup(hp, ic)
+	playerHP, dealerHP = hp
+	itemsPerChest = ic
+end
+
+--[[
+# Round1
+(round 1)
+No params
+
+Begins round 1.
+]]--
+function round1()
+	print("---------\nROUND 1/4\n---------")
+	userinput("2 lives, no items.")
+	
+	loadshotgun(1, 2)
+	while (#shotgun > 0) do
+		playerTurn(1)
+		if not(#shotgun > 0) then break end
+		playerTurn(0)
+	end
+end
+
+--[[
+# playerTurn
+(Player turn)
+plyrID: Player number of who's turn it now is
+
+Begins the round turn of the given player.
+]]--
+function playerTurn(plyrID)
+	
+end
